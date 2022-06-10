@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, request, redirect
+from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
@@ -64,8 +64,6 @@ def show_history():
     eq = Equation.query.order_by(Equation.registration_date.desc()).all()  # обращение к базе данных
     # передача списка в шаблон
     return render_template('history_page.html', eq=eq)
-
-
 
 
 if __name__ == '__main__':
