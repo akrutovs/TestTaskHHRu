@@ -1,10 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-</body>
-</html>
+{% block title %}
+    <h1>History</h1>
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1>History</h1>
+    {% if eq|length>0 %}
+            {% for el in eq %}
+                <div class="alert alert-info">
+                    <h4>{{ el.a }} + {{ el.b }} + {{ el.c }} = 0</h4>
+                    <p><b>Корни {{ el.result }}</b></p>
+                    <p><b>Date {{ el.registration_date.date() }}</b></p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Нет решенных уравнений</p>
+        {% endif %}
+
+{% endblock %}
+</div>

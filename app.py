@@ -52,15 +52,20 @@ def home_page():
         try:
             db.session.add(eq)  # add
             db.session.commit()  # save
-            return redirect('/result')
+            return render_template('result.html', a=a_coeff, b=b_coeff, c=c_coeff, result=result)
         except:
             return "Error"
     return render_template('home_page.html')
 
 
-@app.route('/result')
-def result():
-    return render_template('result.html')
+@app.route('/history')
+def show_history():
+    # создание шаблона через который будем получать все записии из базы данных
+    eq = Equation.query.order_by(Equation.registration_date.desc()).all()  # обращение к базе данных
+    # передача списка в шаблон
+    return render_template('history_page.html', eq=eq)
+
+
 
 
 if __name__ == '__main__':
