@@ -25,7 +25,7 @@ def solver_eq(a, b, c):
     else:
         x1 = (-1 * b - D ** (1 / 2)) / (2 * a)
         x2 = (-1 * b + D ** (1 / 2)) / (2 * a)
-        result = str(x1) + ';' + str(x2)
+        result = str(round(x1,3)) + ';' + str(round(x2,3))
     return result
 
 
