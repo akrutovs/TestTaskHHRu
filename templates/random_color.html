@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <h1>Random color</h1>
+{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+    <h1>Random color</h1>
+     <form method="post">
+        <input type="number" name="number" id="number" placeholder="Enter the number"
+               class="form-control"><br>
+        <input type="submit" class="btn btn-success" value="Random">
+    </form>
+    <p></p>
+    <h4>Ваш цвет - {{ color }}</h4>
+
+
+{% endblock %}
+</div>
