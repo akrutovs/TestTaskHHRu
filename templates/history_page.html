@@ -10,8 +10,12 @@
     {% if eq|length>0 %}
             {% for el in eq %}
                 <div class="alert alert-info">
-                    <h4>{{ el.a }} + {{ el.b }} + {{ el.c }} = 0</h4>
-                    <p><b>Корни {{ el.result }}</b></p>
+                    <h4>{{ el.a }}x^2 + {{ el.b }}x + {{ el.c }} = 0</h4>
+                    {% if el.result|length>0 %}
+                        <p><b>Корни {{ el.result }}</b></p>
+                    {% else %}
+                    <p><b>Корней нет</b></p>
+                    {% endif %}
                     <p><b>Date {{ el.registration_date.date() }}</b></p>
                 </div>
             {% endfor %}
