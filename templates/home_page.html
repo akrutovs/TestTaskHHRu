@@ -1,10 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-</body>
-</html>
+{% block title %}
+    <h1>Solver</h1>
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1>Solver</h1>
+    <form method="post">
+        <input type="number" name="a_coefficient" id="a_coefficient" placeholder="a coefficient" class="form-control"><br>
+        <input type="number" name="b_coefficient" id="b_coefficient" placeholder="b coefficient" class="form-control"><br>
+        <input type="number" name="c_coefficient" id="c_coefficient" placeholder="c coefficient" class="form-control"><br>
+        <input type="submit" class="btn btn-success" value="Solve">
+    </form>
+
+{% endblock %}
+</div>
